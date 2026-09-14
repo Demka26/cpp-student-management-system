@@ -1,133 +1,47 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=23721441&assignment_repo_type=AssignmentRepo)
-# מטלה רביעית - העמסה של אופרטורים (Operator Overloading)
+# Student & Grade Management System – C++
 
-## יושרה אקדמית
+An academic C++ project developed as part of the Advanced C++ course at Ariel University.
 
-במהלך העבודה על המטלות, מותר להתייעץ עם סטודנטים אחרים ולחפש מידע באינטרנט. עם זאת, חל איסור להעתיק קטעי קוד שלמים ממקורות חיצוניים, כולל סטודנטים אחרים, אתרי אינטרנט ומודלי בינה מלאכותית (כגון ChatGPT).
+The project demonstrates object-oriented programming, dynamic memory management, copy semantics, operator overloading, STL usage, and exception handling.
 
-יש לדווח על כל עזרה שקיבלתם, בין אם מדובר בהתייעצות עם סטודנטים אחרים או במידע שנמצא באינטרנט, בהתאם ל[תקנון היושר של המחלקה](https://www.ariel.ac.il/wp/cs/wp-content/uploads/sites/88/2020/08/Guidelines-for-Academic-Integrity.pdf).
-**במקרה של שימוש בכלי בינה מלאכותית (AI), יש לצרף את הפרומפטים שהוזנו ואת התשובות שהתקבלו**.
+## Features
 
-## הקדמה
+- Student and grade management
+- Grade calculations and average computation
+- Dynamic memory allocation and resizing
+- Deep copy implementation
+- Operator overloading
+- Object comparison
+- Exception handling
+- Use of STL algorithms and iterators
 
-מטלה זו היא חלק מהקורס "C++ תכנות מתקדם" ומטרתה להעמיק בנושא **העמסת אופרטורים (Operator Overloading)** באמצעות מימוש מערכת לניהול ציונים וסטודנטים.
+## C++ Concepts Used
 
-במטלה תעבדו עם שתי ישויות מרכזיות:
-- `Grade` — מייצגת ציון יחיד (0–100) ומדגימה מגוון רחב של אופרטורים.
-- `Student` — מייצגת סטודנט שמחזיק מערך דינמי של ציונים וקורסים, ומדגימה אופרטורים כמו `[]` ו-`()`, וכן שילוב של מושגים ממטלות קודמות.
+- Object-Oriented Programming
+- Classes and Encapsulation
+- Dynamic Memory Management
+- Rule of Three
+  - Destructor
+  - Copy Constructor
+  - Copy Assignment Operator
+- Operator Overloading
+- STL Algorithms
+- Iterators
+- Exception Handling
 
-## מבנה המטלה
+## Technologies
 
-במטלה זו עליכם ליצור ולממש את כל הקבצים הנדרשים — קבצי ה-header (`.hpp`) וקבצי המימוש (`.cpp`) — עבור המחלקות `Grade` ו-`Student`. הקבצים `main.cpp` ו-`test.cpp` מגדירים את הממשק (API) הצפוי וההתנהגות הנדרשת — קראו אותם בעיון רב לפני שתתחילו לממש.
+- C++
+- STL
+- Makefile
+- Git / GitHub
 
-## דרישות והנחיות
+## Project Structure
 
-- ליצור ולממש את `Grade.hpp`, `Grade.cpp`, `Student.hpp` ו-`Student.cpp`
-- לוודא שהקוד מתקמפל ופועל ללא שגיאות
-- להקפיד על ניהול זיכרון דינמי תקין (הקצאה/שחרור, העתקה עמוקה)
-- לעבור בהצלחה את הטסטים הכתובים בקובץ `test.cpp`
-- ליצור קובץ `StudentTest.cpp` ובו **לפחות 20 TEST_CASE נוספים** שונים מאלו שב-`test.cpp` (ראו פירוט בהמשך)
-
-## תכונות C++ שיש להדגים
-
-1. **Operator Overloading**:
-   - אופרטורים אריתמטיים: `+ - * /`, וגם `+= -= *=`
-   - אופרטורי השוואה: `== != < > <= >=`
-   - אופרטור פלט: `<<` (אין `>>` במטלה זו)
-   - אופרטורי סיומת/קידומת: `++ --`
-   - אופרטורי המרה **מפורשים** (`explicit`): `(int)`, `(double)`, `(string)`
-2. **Bracket Operator `[]`** — גישה לציונים לפי אינדקס וגם לפי שם קורס
-3. **Parentheses Operator `()`** — חישובי ממוצע עם overload-ים שונים
-4. **הפרדה בין הצהרה למימוש** — `.hpp` מול `.cpp`
-5. **בנאים/מפרקים, const methods, static members**
-6. **מערכים דינמיים (Destruct-arrays)** — `new[]` / `delete[]`
-7. **בדיקות יחידה** — שימוש בספריית `doctest`
-
-## קבצים במטלה
-
-### קבצים שסופקו:
-- **main.cpp** — תוכנית ראשית המדגימה שימוש בכל הפונקציות הנדרשות, עם הערות המציינות את הפלט הצפוי
-- **test.cpp** — קובץ בדיקות יחידה המגדיר את ההתנהגות הצפויה של כל הפונקציות
-- **doctest.h** — ספרייה לבדיקות
-- **Makefile** — קימפול והרצה
-
-### קבצים שעליכם ליצור ולממש:
-- **Grade.hpp** — הכרזת מחלקת `Grade` ומבנה ה-API שלה
-- **Grade.cpp** — מימוש מחלקת `Grade`
-- **Student.hpp** — הכרזת מחלקת `Student`, מבנה `Course`, ומבנה ה-API
-- **Student.cpp** — מימוש מחלקת `Student`
-- **StudentTest.cpp** — קובץ בדיקות נוספות (ראו פירוט בסעיף "בדיקות סטודנט")
-
-## הוראות קימפול והרצה
-
-### שימוש ב-Makefile:
-```bash
-make              # מקמפל ומריץ את התוכנית הראשית
-make test         # מקמפל ומריץ את בדיקות היחידה
-make student_test # מקמפל ומריץ את בדיקות הסטודנט
-make tidy         # מריץ clang-tidy לבדיקת איכות הקוד
-make clean        # מנקה את כל קבצי הקימפול
-```
-
-## בדיקות סטודנט (StudentTest.cpp)
-
-עליכם ליצור קובץ `StudentTest.cpp` שיכיל **לפחות 20 בדיקות (`TEST_CASE`) נוספות** שלא קיימות ב-`test.cpp`. הקובץ צריך:
-- לכלול `#include "doctest.h"` ואת קבצי ה-header שלכם
-- לכלול בדיקות שונות ומקוריות (לא העתקה של הבדיקות הקיימות)
-- לכסות מקרי קצה, מצבי שגיאה, וקומבינציות שונות
-
-המערכת בודקת אוטומטית (באמצעות doctest) שמספר הבדיקות הכולל עומד בדרישה.
-
-## פירוט דרישות נוספות
-
-### סולם ציונים (Letter Grades) ומיפוי GPA
-| ציון         | Letter Grade | GPA Points |
-|-------------|-------------|------------|
-| 90–100      | A           | 4.0        |
-| 80–89       | B           | 3.0        |
-| 70–79       | C           | 2.0        |
-| 60–69       | D           | 1.0        |
-| 0–59        | F           | 0.0        |
-
-ה-GPA מחושב כממוצע ה-GPA Points של כל הציונים.
-
-### פורמט פלט (`operator<<`)
-- **Grade**: הפלט צריך להיות בפורמט `85.50 (B)` — כלומר, **תמיד שתי ספרות אחרי הנקודה** (`fixed`, `setprecision(2)`), ואחריו Letter Grade בסוגריים.
-  - דוגמאות: `Grade(90)` → `90.00 (A)`, `Grade(0)` → `0.00 (F)`, `Grade(85.5)` → `85.50 (B)`
-- **Student**: הפלט צריך לכלול את שם הסטודנט, ת.ז., וכל הציונים עם שמות הקורסים.
-
-### אופרטורי המרה מפורשים (`explicit` conversion operators)
-מחלקת `Grade` מכילה אופרטורי המרה עם `explicit`:
-- `explicit operator int()` — המרה מפורשת לשלם: `(int)g`
-- `explicit operator double()` — המרה מפורשת לעשרוני: `(double)g`
-- `explicit operator std::string()` — המרה מפורשת לstring (Letter Grade): `(std::string)g`
-
-### התנהגות `operator[]` בגישה לא חוקית
-- גישה לאינדקס מחוץ לטווח (`index < 0` או `index >= gradeCount`) צריכה לזרוק חריגה מסוג `std::out_of_range`.
-- גישה לפי שם קורס שלא קיים צריכה לזרוק חריגה מסוג `std::out_of_range`.
-
-### פורמולת `operator()(int index, double weight)`
-האופרטור מחשב ממוצע משוקלל שבו הציון באינדקס `index` מקבל משקל `weight`, ו**כל שאר הציונים מקבלים משקל 1**.
-
-נוסחה כללית (כאשר יש `n` ציונים):
-```
-(grades[index] * weight + sum_of_all_other_grades * 1) / (weight + (n-1) * 1)
-```
-דוגמה: אם יש 3 ציונים (92, 90, 98) והקריאה היא `student(0, 2.0)`, התוצאה היא:
-```
-(92*2 + 90*1 + 98*1) / (2 + 1 + 1) = 372 / 4 = 93.0
-```
-
-### העתקה עמוקה — כלל השלושה (Rule of Three)
-מכיוון ש-`Student` מנהל זיכרון דינמי (`new[]`/`delete[]`), יש לממש את שלושת הפונקציות:
-1. Copy constructor
-2. Copy assignment operator (`operator=`)
-3. Destructor
-
-## הגשה
-
-יש להגיש את כל הקבצים: `Grade.hpp`, `Grade.cpp`, `Student.hpp`, `Student.cpp` ו-`StudentTest.cpp`. וודאו שהקוד מתקמפל ורץ כראוי לפני ההגשה.
-
----
-
-בהצלחה!
+```text
+├── Grade.cpp
+├── Grade.hpp
+├── Student.cpp
+├── Student.hpp
+├── Makefile
+└── README.md
